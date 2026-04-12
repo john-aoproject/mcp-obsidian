@@ -140,7 +140,7 @@ class Obsidian():
         }
         
         def call_fn():
-            response = requests.patch(url, headers=headers, data=content, verify=self.verify_ssl, timeout=self.timeout)
+            response = requests.patch(url, headers=headers, data=content.encode('utf-8'), verify=self.verify_ssl, timeout=self.timeout)
             response.raise_for_status()
             return None
 
